@@ -181,6 +181,9 @@ def get_relu_sat_loss(logits, labels, m=5):
 
 
 def get_margin_loss(logits, labels):
+    """
+    AML
+    """
     # TH label
     th_label = torch.zeros_like(labels, dtype=torch.float).to(labels)
     th_label[:, 0] = 1.0
