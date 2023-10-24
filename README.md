@@ -1,5 +1,5 @@
 # HingeABL
-Codes for paper "Adaptive Hinge Balance Loss for Document-Level Relation Extraction", Findings of EMNLP 2023
+Codes for paper "Adaptive Hinge Balance Loss for Document-Level Relation Extraction", Findings of EMNLP 2023.
 ## Requirements
 * Python (tested on 3.7.4)
 * CUDA (tested on 11.3)
