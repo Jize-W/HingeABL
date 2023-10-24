@@ -39,4 +39,5 @@ Train the BERT model with HingeABL using the following command:
 >> sh scripts/test_HingeABL.sh  # evaluation
 ```
 You can select different loss functions by setting the `--loss_type` argument before training. Optional loss types include：`ATL, balance_softmax, AFL, SAT, MeanSAT, HingeABL, AML`.
-### This code is partially based on the code of [ATLOP](https://github.com/wzhouad/ATLOP)
+
+Note: This code is partially based on the code of [ATLOP](https://github.com/wzhouad/ATLOP).
