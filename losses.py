@@ -150,17 +150,11 @@ def get_relu_sat_loss(logits, labels, m=5):
     p_logits_imp = p_logits_imp * labels
     p_logits_imp = p_logits_imp[:, 1:]
     p_logits_imp = p_logits_imp / (p_logits_imp.sum(dim=1).unsqueeze(dim=1) + 1e-30)
-    p_logits_imp = p_logits_imp #+ p_mean.unsqueeze(dim=1)
-    p_logits_imp = p_logits_imp * labels[:, 1:]
-    p_logits_imp = p_logits_imp / (p_logits_imp.sum(dim=1).unsqueeze(dim=1) + 1e-30)
 
     n_logits_diff = logits - logits[:, 0].unsqueeze(dim=1)
     n_logits_imp = F.relu(n_logits_diff + m)
     n_logits_imp = n_logits_imp * (1 - labels)
     n_logits_imp = n_logits_imp[:, 1:]
-    n_logits_imp = n_logits_imp / (n_logits_imp.sum(dim=1).unsqueeze(dim=1) + 1e-30)
-    n_logits_imp = n_logits_imp
-    n_logits_imp = n_logits_imp * (1 - labels)[:, 1:]
     n_logits_imp = n_logits_imp / (n_logits_imp.sum(dim=1).unsqueeze(dim=1) + 1e-30)
 
     exp_th = torch.exp(logits[:, 0].unsqueeze(dim=1))   # margin=5
